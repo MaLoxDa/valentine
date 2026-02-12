@@ -8,13 +8,55 @@
 </head>
 
 <body>
-    <h1>Будешь моей валентинкой?</h1>
+    <h1>Будешь моей валентинкой?❤️</h1>
 
     <img src="cats.jpg" class="cats">
 
     <div class="answerbuttons">
-        <a href="yes.html"class="links">ДАА</a>
-        <a href="no.html"class="links">нет.</a>
+        <a href="yes.html"class="links">ДАА💗</a>
+        <a href="no.html" class="links no-button" onclick="handleNoClick(event)">нет.</a>
     </div>
+    <script>
+    let noButtonEscaped = false;
+
+    function handleNoClick(event) {
+        if (!noButtonEscaped) {
+            event.preventDefault(); 
+            alert('Ну эй, давай нормально😠');
+            noButtonEscaped = true; 
+        }
+        
+    }
+</script>
+<script>
+    // 🎉 
+    window.onload = function() {
+        for(let i = 0; i < 60; i++) {
+            setTimeout(() => {
+                const conf = document.createElement('div');
+                conf.innerHTML = ['🎉','✨','💖','🎊','❤️','🌸','🦋'][Math.floor(Math.random()*7)];
+                conf.style.position = 'fixed';
+                conf.style.left = '50%';
+                conf.style.top = '50%';
+                conf.style.fontSize = Math.floor(Math.random() * 30 + 25) + 'px';
+            
+                const x = (Math.random() - 0.5) * 400;
+                const y = (Math.random() - 0.5) * 400;
+                
+                conf.style.transform = `translate(-50%, -50%)`;
+                conf.style.animation = `explode 1s ease-out`;
+                
+                conf.style.setProperty('--x', x + 'px');
+                conf.style.setProperty('--y', y + 'px');
+                
+                conf.style.pointerEvents = 'none';
+                conf.style.zIndex = '1000';
+                document.body.appendChild(conf);
+                
+                setTimeout(() => conf.remove(), 1000);
+            }, i * 20);
+        }
+    };
+</script>
 </body>
 </html>
