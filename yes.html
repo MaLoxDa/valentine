@@ -9,9 +9,55 @@
 </head>
 
 <body>
-    <h1> уии я очень рада</h1>
+    <h1> Уии я очень рада💕</h1>
 
-   <img src="https://i.pinimg.com/736x/34/71/26/347126826ebb03947bc9e746c119b0b1.jpg" class="cats">
+   <img src="happycat.jpg" class="cats">
+
+    <div class="answerbuttons">
+    <a href="index.html" class="links"> ❤️🧡💛💚💙💜🤍
+    </a>
+    </div>
+
+    <script>
+    // 🌸 + ❤️ 
+    window.onload = function() {
+        setInterval(createHeart, 300);
+        setInterval(createPetal, 500);
+    };
+
+    // ❤️ 
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.innerHTML = '❤️';
+        heart.style.position = 'fixed';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.top = '-50px';
+        heart.style.fontSize = Math.floor(Math.random() * 30 + 20) + 'px';
+        heart.style.color = 'rgba(197, 32, 32, 0.865)';
+        heart.style.opacity = Math.random() * 0.7 + 0.3;
+        heart.style.animation = 'fall ' + (Math.random() * 3 + 2) + 's linear';
+        heart.style.pointerEvents = 'none';
+        heart.style.zIndex = '999';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+    }
+
+    // 🌸 
+    function createPetal() {
+        const petal = document.createElement('div');
+        petal.innerHTML = '🌸';
+        petal.style.position = 'fixed';
+        petal.style.left = Math.random() * 100 + '%';
+        petal.style.top = '-30px';
+        petal.style.fontSize = '25px';
+        petal.style.opacity = '0.7';
+        petal.style.animation = 'fallPetal ' + (Math.random() * 4 + 3) + 's ease-in';
+        petal.style.pointerEvents = 'none';
+        petal.style.zIndex = '998';
+        document.body.appendChild(petal);
+        setTimeout(() => petal.remove(), 7000);
+    }
+</script>
 
 </body>
 
