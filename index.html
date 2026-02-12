@@ -20,11 +20,14 @@
     let noButtonEscaped = false;
 
     function handleNoClick(event) {
-        if (!noButtonEscaped) {
-            event.preventDefault(); 
-            alert('Ну эй, давай нормально😠');
-            noButtonEscaped = true; 
-        }
+    if (!noButtonEscaped) {
+        event.preventDefault(); 
+        alert('Ну эй, давай нормально😠');
+        noButtonEscaped = true; 
+    } else {
+        window.location.href = 'no.html'; 
+    }
+}
         
     }
 </script>
