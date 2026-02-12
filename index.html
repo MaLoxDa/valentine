@@ -33,31 +33,36 @@
 </script>
 <script>
     // 🎉 
+    let fireworksShown = false;
+
     window.onload = function() {
-        for(let i = 0; i < 60; i++) {
-            setTimeout(() => {
-                const conf = document.createElement('div');
-                conf.innerHTML = ['🎉','✨','💖','🎊','❤️','🌸','🦋'][Math.floor(Math.random()*7)];
-                conf.style.position = 'fixed';
-                conf.style.left = '50%';
-                conf.style.top = '50%';
-                conf.style.fontSize = Math.floor(Math.random() * 30 + 25) + 'px';
-            
-                const x = (Math.random() - 0.5) * 400;
-                const y = (Math.random() - 0.5) * 400;
+        if (!fireworksShown) {
+            for(let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const conf = document.createElement('div');
+                    conf.innerHTML = ['🎉','✨','💖','🎊','❤️','🌸','🦋'][Math.floor(Math.random()*7)];
+                    conf.style.position = 'fixed';
+                    conf.style.left = '50%';
+                    conf.style.top = '50%';
+                    conf.style.fontSize = Math.floor(Math.random() * 30 + 25) + 'px';
                 
-                conf.style.transform = `translate(-50%, -50%)`;
-                conf.style.animation = `explode 1s ease-out`;
-                
-                conf.style.setProperty('--x', x + 'px');
-                conf.style.setProperty('--y', y + 'px');
-                
-                conf.style.pointerEvents = 'none';
-                conf.style.zIndex = '1000';
-                document.body.appendChild(conf);
-                
-                setTimeout(() => conf.remove(), 1000);
-            }, i * 20);
+                    const x = (Math.random() - 0.5) * 400;
+                    const y = (Math.random() - 0.5) * 400;
+                    
+                    conf.style.transform = `translate(-50%, -50%)`;
+                    conf.style.animation = `explode 1s ease-out`;
+                    
+                    conf.style.setProperty('--x', x + 'px');
+                    conf.style.setProperty('--y', y + 'px');
+                    
+                    conf.style.pointerEvents = 'none';
+                    conf.style.zIndex = '1000';
+                    document.body.appendChild(conf);
+                    
+                    setTimeout(() => conf.remove(), 1000);
+                }, i * 20);
+            }
+            fireworksShown = true;
         }
     };
 </script>
