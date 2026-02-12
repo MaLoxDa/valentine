@@ -46,6 +46,34 @@ a:hover{
 }
 .answerbuttons a {
     font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 24px; /* можно настроить размер */
-    text-decoration: none; /* убрать подчеркивание */
+    font-size: 24px; 
+    text-decoration: none; 
+}
+/* Кнопка НЕТ (убегающая) */
+.no-button {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* ДОЖДЬ ИЗ СЕРДЕЧЕК */
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* ДОЖДЬ ИЗ ЛЕПЕСТКОВ */
+@keyframes fallPetal {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(200deg); }
+}
+/* ХЛОПУШКА */
+@keyframes explode {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translate(var(--x, 0px), var(--y, 0px)) scale(1);
+    }
 }
